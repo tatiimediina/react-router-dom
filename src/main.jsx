@@ -1,5 +1,12 @@
-import { createRoot } from "react-dom/client";
-import "./App.css";
-import { AppRouter } from "./AppRouter.jsx";
+import { createRoot } from 'react-dom/client'
 
-createRoot(document.getElementById("root")).render(<AppRouter />);
+import {AppRouter} from './AppRouter.jsx'
+
+import './App.css'
+import { SessionProvider } from './context/SessionProvider'
+
+createRoot(document.getElementById('root')).render(
+  <SessionProvider>
+    <AppRouter />
+  </SessionProvider>
+)

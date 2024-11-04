@@ -11,16 +11,16 @@ export const SessionProvider = ({ children }) => {
     fetch("http://localhost:4000/auth/me", {
       credentials: "include",
     })
-      .then((respuesta) => {
+      .then(respuesta => {
         if (!respuesta.ok) {
           throw new Error("no se pudo iniciar sesión");
         }
 
-        respuesta.json().then((data) => {
+        respuesta.json().then(data=> {
           setUser(data.user);
         });
       })
-      .catch((e) => {
+      .catch(e => {
         console.log(e);
         setUser(null);
       });
